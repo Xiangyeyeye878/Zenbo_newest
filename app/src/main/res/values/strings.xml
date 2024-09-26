@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Zenbo</string>
+    <string name="btnStart">錄音</string>
+    <string name="hello">點擊進入</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
+    <string name="sendButton">傳送</string>
 </resources>

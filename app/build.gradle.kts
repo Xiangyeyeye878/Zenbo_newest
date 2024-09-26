@@ -31,6 +31,12 @@ android {
     }
 }
 
+
+//repositories {
+//    google()
+//    mavenCentral()  // 加入 Maven Central
+//}
+
 dependencies {
 
     implementation(libs.appcompat)
@@ -40,9 +46,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation("net.java.dev.jna:jna:5.7.0")
+    implementation("com.alphacephei:vosk-android:0.3.32+")
     testImplementation("junit:junit:4.13.2") // JUnit 4 的最新版本
     implementation("androidx.appcompat:appcompat:1.6.1") // 目前的最新版本
     implementation(project(":RobotActivityLibrary"))
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs"))) // 如果有本地 JAR 文件
 
+    // add the dependency for the Google AI client SDK for Android
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
+    // Required for one-shot operations (to use `ListenableFuture` from Guava Android)
+    implementation("com.google.guava:guava:31.0.1-android")
+
+    // Required for streaming operations (to use `Publisher` from Reactive Streams)
+    implementation("org.reactivestreams:reactive-streams:1.0.4")
 }
